@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+    }
+
+    #globeViz {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .active {
+      background-color: #FFD700;
+    }
+  </style>
+  <script src="https://unpkg.com/globe.gl"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3-interpolate@3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3-scale@3"></script>
+  <script defer type="text/javascript" src="index.js"></script>
+</head>
+
+<body>
+  <div class="guiContainer" id="guiContainer">
+  </div>
+  <div id="container">
+    <div id="yearButtons">
+      <h2 class="title">Years</h2>
+      <button class="year-button">1999</button>
+      <button class="year-button">2000</button>
+      <button class="year-button">2001</button>
+      <button class="year-button">2002</button>
+      <button class="year-button">2003</button>
+      <button class="year-button">2004</button>
+      <button class="year-button">2005</button>
+      <button class="year-button">2006</button>
+      <button class="year-button">2007</button>
+      <button class="year-button">2008</button>
+      <button class="year-button">2009</button>
+      <button class="year-button">2010</button>
+      <button class="year-button">2011</button>
+      <button class="year-button">2012</button>
+      <button class="year-button">2013</button>
+      <button class="year-button">2014</button>
+      <button class="year-button">2015</button>
+      <button class="year-button">2016</button>
+      <button class="year-button">2017</button>
+    </div>
+
+    <div id="diseaseButtons">
+      <h2 class="title">Diseases</h2>
+      <div class="disease-row">
+        <button class="disease-button">Unintentional injuries</button>
+        <button class="disease-button">Alzheimer's disease</button>
+        <button class="disease-button">Stroke</button>
+        <button class="disease-button">CLRD</button>
+        <button class="disease-button">Diabetes</button>
+        <button class="disease-button">Heart disease</button>
+        <button class="disease-button">Influenza and pneumonia</button>
+        <button class="disease-button">Suicide</button>
+        <button class="disease-button">Cancer</button>
+        <button class="disease-button">Kidney disease</button>
+      </div>
+    </div>
+
+    <div id="stateButtons">
+      <h2 class="title">States</h2>
+      <button class="state-button">Alaska</button>
+      <button class="state-button">Alabama</button>
+      <button class="state-button">Arkansas</button>
+      <button class="state-button">Arizona</button>
+      <button class="state-button">California</button>
+      <button class="state-button">Colorado</button>
+      <button class="state-button">Connecticut</button>
+      <button class="state-button">District of Columbia</button>
+      <button class="state-button">Delaware</button>
+      <button class="state-button">Florida</button>
+      <button class="state-button">Georgia</button>
+      <button class="state-button">Hawaii</button>
+      <button class="state-button">Iowa</button>
+      <button class="state-button">Idaho</button>
+      <button class="state-button">Illinois</button>
+      <button class="state-button">Indiana</button>
+      <button class="state-button">Kansas</button>
+      <button class="state-button">Kentucky</button>
+      <button class="state-button">Louisiana</button>
+      <button class="state-button">Massachusetts</button>
+      <button class="state-button">Maryland</button>
+      <button class="state-button">Maine</button>
+      <button class="state-button">Michigan</button>
+      <button class="state-button">Minnesota</button>
+      <button class="state-button">Missouri</button>
+      <button class="state-button">Mississippi</button>
+      <button class="state-button">Montana</button>
+      <button class="state-button">North Carolina</button>
+      <button class="state-button">North Dakota</button>
+      <button class="state-button">Nebraska</button>
+      <button class="state-button">New Hampshire</button>
+      <button class="state-button">New Jersey</button>
+      <button class="state-button">New Mexico</button>
+      <button class="state-button">Nevada</button>
+      <button class="state-button">New York</button>
+      <button class="state-button">Ohio</button>
+      <button class="state-button">Oklahoma</button>
+      <button class="state-button">Oregon</button>
+      <button class="state-button">Pennsylvania</button>
+      <button class="state-button">Puerto Rico</button>
+      <button class="state-button">Rhode Island</button>
+      <button class="state-button">South Carolina</button>
+      <button class="state-button">South Dakota</button>
+      <button class="state-button">Tennessee</button>
+      <button class="state-button">Texas</button>
+      <button class="state-button">Utah</button>
+      <button class="state-button">Virginia</button>
+      <button class="state-button">Vermont</button>
+      <button class="state-button">Washington</button>
+      <button class="state-button">Wisconsin</button>
+      <button class="state-button">West Virginia</button>
+      <button class="state-button">Wyoming</button>
+    </div>
+
+    <div id="container">
+      <div id="globeViz" style="flex: 1;">Content of the globeViz div</div>
+    </div>
+  </div>
+  <div id="project_title">
+    <div style="font-weight: bold; text-align: center;background-color: black; color: white; font-size: 16px;">Leading causes of deaths in the US from 1999 to 2017</div>
+    </div>
+</body>
+
+</html>
